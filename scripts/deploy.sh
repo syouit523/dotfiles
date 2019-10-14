@@ -7,11 +7,11 @@ fi
 
 
 for dirname in $(find "$DOTPATH" -not -path '*/\.*' -mindepth 1 -maxdepth 1 -type d); do
-  f="$dirname"/deploy.sh
-  echo f
+  f="$dirname"/__deploy__.sh
+  echo "$dirname"
   if [ -f "$f" ]; then
     if [ -x "$f" ]; then
-    . "$dirname"/deploy.sh
+    . "$dirname"/__deploy__.sh
     else
       echo "permission denied: $f"
       exit 1
