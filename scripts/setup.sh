@@ -13,16 +13,19 @@ make_workspace () {
 }
 
 download_dotfiles () {
+  echo "download_dotfiles"
   if [ ! -d "$DOTPATH" ];then
     git clone "$DOTFILES_GITHUB" "$DOTPATH"
   fi
 }
 
 deploy_dotfiles () {
+  echo "deploy_dotfiles"
   . "$DOTPATH"/scripts/deploy.sh
 }
 
 initialize () {
+  echo "initialize"
   . "$DOTPATH"/scripts/initialize.sh
 }
 
